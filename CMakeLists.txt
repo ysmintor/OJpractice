@@ -3,4 +3,4 @@ project(OJPractice)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(OJPractice chapter2/ch2_13.cpp)
+add_executable(OJPractice chapter2/ch2_14.cpp)
