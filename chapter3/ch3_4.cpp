@@ -10,16 +10,16 @@ struct Node {
     Node *lchild;
     Node *rchild;
     char c;         // 结点字符信息
-}Tree[50];
+} Tree[50];
 
 int loc;            // 静态内存分配数组
-Node *create(){
+Node *create() {
     Tree[loc].lchild = Tree[loc].rchild = NULL;
     return &Tree[loc++];
 }
 
 char str1[30], str2[30];    // 保存前序和中序遍历结果字符串
-void postOrder(Node *T){
+void postOrder(Node *T) {
     if (T->lchild != NULL) {    // 若左子树不空，递归遍历其左子树
         postOrder(T->lchild);
     }
@@ -29,7 +29,7 @@ void postOrder(Node *T){
     printf("%c", T->c);         // 遍历该结点，输出其字符信息
 }
 
-Node *build(int s1, int e1, int s2, int e2){
+Node *build(int s1, int e1, int s2, int e2) {
     // 字符串的前序遍历和中序遍历还原树，并返回其根结点，其中前序遍历结果为由str1[s1]到str2[e1]，中序遍历结果为str2[s2]到str2[e2]
     Node *ret = create();   // 为该树根结点申请空间
     ret->c = str1[s1];      // 该结点字符为前序遍历中的第一个字符
@@ -57,7 +57,7 @@ Node *build(int s1, int e1, int s2, int e2){
 }
 
 
-int main(){
+int main() {
     while (scanf("%s", str1) != EOF) {
         scanf("%s", str2);
 
