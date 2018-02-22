@@ -18,7 +18,7 @@ Node *create(){
     return &Tree[loc++];
 }
 
-char str1[30], str2[30];    // 保存前序和遗弃遍历结果字符串
+char str1[30], str2[30];    // 保存前序和中序遍历结果字符串
 void postOrder(Node *T){
     if (T->lchild != NULL) {    // 若左子树不空，递归遍历其左子树
         postOrder(T->lchild);
